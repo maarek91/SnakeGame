@@ -1,18 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 import java.util.Random;
 
-/**
- * Created by infuntis on 15/01/17.
- */
 public class GameField extends JPanel implements ActionListener{
     private final int SIZE = 320;
     private final int DOT_SIZE = 16;
-    private final int ALL_DOTS = 400;
+    private final int ALL_DOTS = 800;
     private Image dot;
     private Image apple;
     private int appleX;
@@ -29,7 +23,7 @@ public class GameField extends JPanel implements ActionListener{
 
 
     public GameField(){
-        setBackground(Color.black);
+        setBackground(Color.lightGray);
         loadImages();
         initGame();
         addKeyListener(new FieldKeyListener());
@@ -70,10 +64,10 @@ public class GameField extends JPanel implements ActionListener{
         }
         else {
         	String s = "Try again";
-        	Font f = new Font("Arial", Font.BOLD, 20);
-        	g.setColor(Color.BLUE);
+        	Font f = new Font("Arial", Font.BOLD, 40);
+        	g.setColor(Color.YELLOW);
         	g.setFont(f);
-        	g.drawString(s, 60, SIZE/2);
+        	g.drawString(s, 70, SIZE/2);
         }
     }
 
